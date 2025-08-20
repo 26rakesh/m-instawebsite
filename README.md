@@ -37,7 +37,7 @@ inSTA-web/
 │   └── js/
 │       └── site.js
 ├── Program.cs
-├── InstaWeb.csproj
+├── inSTAWeb.csproj
 ├── appsettings.json
 └── README.md
 ```
