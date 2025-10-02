@@ -592,3 +592,133 @@ body {
         font-size: 1.2rem;
     }
 }
+
+/* ===== DELETE ACCOUNT PAGE ===== */
+.delete-account-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.delete-account-header {
+    background: linear-gradient(135deg, #9C27B0, #E91E63, #FF9800);
+    color: white;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.delete-account-header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.delete-account-content {
+    padding: 3rem 2.5rem;
+}
+
+.sorry-title {
+    color: #1e3a5f;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.delete-description {
+    color: #4a5568;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+.delete-form {
+    margin-top: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: #2d3748;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.required {
+    color: #e53e3e;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2979FF;
+    box-shadow: 0 0 0 3px rgba(41, 121, 255, 0.1);
+}
+
+.submit-btn {
+    background: #2979FF;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background: #1e5bb8;
+    transform: translateY(-2px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.success-message {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #c6f6d5;
+    border: 1px solid #68d391;
+    border-radius: 5px;
+    color: #22543d;
+}
+
+.error-message {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #fed7d7;
+    border: 1px solid #fc8181;
+    border-radius: 5px;
+    color: #742a2a;
+}
+
+@media (max-width: 768px) {
+    .delete-account-container {
+        margin: 0 1rem;
+    }
+    
+    .delete-account-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .delete-account-header h1 {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.in.sta",
+      "sha256_cert_fingerprints": [
+        "ab:5f:b6:66:f6:ab:c1:1b:61:53:72:09:ef:0d:71:02:ab:ee:d7:cf:52:7d:f9:9d:e0:8d:c2:e9:84:96:37:47",
+        "e0:2c:0e:f1:ff:a5:22:d3:2c:81:91:c0:fc:2e:f5:d5:da:45:73:c2:da:f1:98:3e:7f:1a:a3:f6:b2:e1:b5:b1",
+        "44:d4:36:b0:e5:b7:68:59:e0:62:bb:7c:db:81:f6:b2:1e:e8:e0:ec",
+        "4e:a0:9f:6e:e1:90:5f:25:71:12:e9:6c:1c:af:a5:96:71:4f:47:07"
+      ]
+    }
+  }
+]
