@@ -108,27 +108,41 @@
             errorMessage.style.display = 'none';
             
             try {
-                // Create form data for FormSubmit service
+                // Create form data for FormSubmit
                 const formData = new FormData();
                 formData.append('_subject', 'm-inSTA Delete Request');
-                formData.append('_replyto', 'noreply@m-insta.com');
                 formData.append('_template', 'box');
-                formData.append('_cc', '26rakkesh@gmail.com');
+                formData.append('_captcha', 'false');
                 formData.append('Name', userName);
                 formData.append('Mobile Number', mobileNumber);
                 formData.append('Request Type', 'Account Deletion Request');
                 formData.append('Submitted On', new Date().toLocaleString());
                 
-                // Send to FormSubmit (free service that forwards form submissions to email)
-                const response = await fetch('https://formsubmit.co/minstaasocial@gmail.com', {
+                // Send to both email addresses using FormSubmit
+                // Primary: minstaasocial@gmail.com, CC: 26rakkesh@gmail.com
+                const response = await fetch('https://formsubmit.co/ajax/minstaasocial@gmail.com', {
                     method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    body: formData
                 });
                 
-                if (response.ok) {
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    // Send to second email as well
+                    const formData2 = new FormData();
+                    formData2.append('_subject', 'm-inSTA Delete Request');
+                    formData2.append('_template', 'box');
+                    formData2.append('_captcha', 'false');
+                    formData2.append('Name', userName);
+                    formData2.append('Mobile Number', mobileNumber);
+                    formData2.append('Request Type', 'Account Deletion Request');
+                    formData2.append('Submitted On', new Date().toLocaleString());
+                    
+                    await fetch('https://formsubmit.co/ajax/26rakkesh@gmail.com', {
+                        method: 'POST',
+                        body: formData2
+                    });
+                    
                     // Show success message
                     successMessage.style.display = 'block';
                     
@@ -140,7 +154,7 @@
                         successMessage.style.display = 'none';
                     }, 5000);
                 } else {
-                    throw new Error('Failed to submit form');
+                    throw new Error(result.message || 'Failed to submit form');
                 }
             } catch (error) {
                 console.error('Error:', error);
